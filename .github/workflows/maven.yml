@@ -9,6 +9,7 @@ jobs:
     runs-on: windows-latest
     
     env:
+   
       FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
 
     steps:
@@ -20,7 +21,8 @@ jobs:
         with:
           distribution: 'temurin'
           java-version: '21'
+          cache: 'maven' 
 
       - name: Build using Maven
-        run: mvn clean install
-        working-directory: cicd-demo
+        working-directory: cicd-demo 
+        run: mvn -B clean install 
